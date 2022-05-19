@@ -8,6 +8,7 @@ import com.portfolio.pablo.Entidad.Persona;
 import com.portfolio.pablo.Interface.IPersonaServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +29,7 @@ public class PersonaControlador {
     IPersonaServicio ipersonaservicio;
 
     @GetMapping("personas/traer")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Persona> getPersona() {
         return ipersonaservicio.getPersona();
     }
@@ -53,11 +55,14 @@ public class PersonaControlador {
     persona.setApellido(nuevoApellido);
     persona.setImg(nuevoImg);
     ipersonaservicio.guardaPersona(persona);
-    return persona;
-    
+    return persona;    
     }
 
-    
+    @GetMapping("personas/traer/perfil")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public Persona encuentraPersona() {
+        return ipersonaservicio.buscaPersona((long)1);
+    }
     
     
 
