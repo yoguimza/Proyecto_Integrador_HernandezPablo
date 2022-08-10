@@ -1,5 +1,35 @@
+<div class="row">
+    <H1>Educacion</H1>
+    <div class="col-lg-2">
+        <button aria-label="Nueva" type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+            Nueva Educacion
+        </button>
 
-<!--<p>educacion works!</p>-->
+    </div>
+
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Educacion of edu">
+                    <td>
+                        <h5>{{Educacion.nombreEd}}</h5>
+                    </td>
+                    <td>{{Educacion.descripcionEd}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                        <i class="bi bi-pencil-square"></i>Editar</button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                        <i class="bi bi-trash"></i> Borrar</button>
+                    </td>
+                </tr>
+            <tbody>
+        </table>
+    </div>
+</div>
+<!--<p>educacion works!</p>
 <div class="row">
     <H1>Educacion</H1>
     <div class="col-lg-1"></div>
@@ -14,4 +44,6 @@
 
         </ul>
     </div>
-</div>
+</div>-->
+
+
