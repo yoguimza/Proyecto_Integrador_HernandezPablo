@@ -1,4 +1,44 @@
-<div class="container" *ngIf="educ">
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100" *ngIf="educ">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" >
+            <div class="card-body p-4 p-md-5">
+              <h3 class=" text-center mb-4 pb-2 pb-md-0 mb-md-5">Editar Educación</h3>
+              <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">  
+                <div class="row">
+                  <div>  
+                    <div class="form-group">
+                        <label for="nombreEd"> Nombre de la Institución</label>
+                        <input type="text" class="form-control" id="nombreEd" name="nombreEd" [(ngModel)]="educ.nombreEd" required>
+                    </div>
+                  </div>
+                  <br>                  
+                  <br>                  
+                  <br>
+                  <br>    
+                  <div>  
+                    <div class="form-group">
+                        <label for="descripcionEd"> Descripción de la Carrera</label>
+                        <input type="text" class="form-control" id="descripcionEd" name="descripcionEd" [(ngModel)]="educ.descripcionEd" required>
+                    </div>  
+                  </div>
+                </div>
+                <br>
+                <br>                            
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">
+                        Guardar
+                    </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--<div class="container" *ngIf="educ">
     <div class="row">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
@@ -21,4 +61,4 @@
             </form>
         </div>
     </div>
-</div>
+</div>-->
