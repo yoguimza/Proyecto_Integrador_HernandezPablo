@@ -1,9 +1,9 @@
 export class Habilidades {
     id?:number;
     nombreH:string;
-    valorH:string;
+    valorH:number;
 
-    constructor(nombreH:string, valorH:string){
+    constructor(nombreH:string, valorH:number){
         this.nombreH=nombreH;
         this.valorH=valorH;
     }

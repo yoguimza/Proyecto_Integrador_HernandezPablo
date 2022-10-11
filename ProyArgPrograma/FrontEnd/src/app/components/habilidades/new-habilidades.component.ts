@@ -9,8 +9,8 @@ import { HabilidadesService } from 'src/app/service/habilidades.service';
   styleUrls: ['./new-habilidades.component.css']
 })
 export class NewHabilidadesComponent implements OnInit {
-  nombreH:string='';
-  valorH:string='';
+  nombreH:string;
+  valorH:number;
 
   constructor(private sHabilidades:HabilidadesService, private router:Router) { }
 
@@ -29,5 +29,4 @@ export class NewHabilidadesComponent implements OnInit {
       }
     )
   }
-
 }

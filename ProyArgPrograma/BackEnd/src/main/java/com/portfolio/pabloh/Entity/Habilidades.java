@@ -19,12 +19,13 @@ public class Habilidades {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreH;
-    private String valorH;
-
+    private int valorH;
+    
     public Habilidades() {
     }
 
-    public Habilidades(String nombreH, String valorH) {
+    public Habilidades(String nombreH, int valorH) {
+        
         this.nombreH = nombreH;
         this.valorH = valorH;
     }
@@ -35,7 +36,7 @@ public class Habilidades {
 
     public void setId(int id) {
         this.id = id;
-    }
+    }    
 
     public String getNombreH() {
         return nombreH;
@@ -45,11 +46,11 @@ public class Habilidades {
         this.nombreH = nombreH;
     }
 
-    public String getValorH() {
+    public int getValorH() {
         return valorH;
     }
 
-    public void setValorH(String valorH) {
+    public void setValorH(int valorH) {
         this.valorH = valorH;
-    }    
+    }   
 }

@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Notebook
  */
 public interface RHabilidades extends JpaRepository <Habilidades, Integer> {
-    public Optional<Habilidades> findByNombreH(String nombreH);
+    Optional<Habilidades> findByNombreH(String nombreH);
     public boolean existsByNombreH(String nombreH);
 }

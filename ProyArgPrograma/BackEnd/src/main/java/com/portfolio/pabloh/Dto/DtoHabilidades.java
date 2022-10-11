@@ -14,15 +14,15 @@ public class DtoHabilidades {
     @NotBlank
     private String nombreH;
     @NotBlank
-    private String valorH;
+    private int valorH;
 
     public DtoHabilidades() {
     }
 
-    public DtoHabilidades(String nombreH, String valorH) {
+    public DtoHabilidades(String nombreH, int valorH) {
         this.nombreH = nombreH;
         this.valorH = valorH;
-    }
+    }    
 
     public String getNombreH() {
         return nombreH;
@@ -32,14 +32,11 @@ public class DtoHabilidades {
         this.nombreH = nombreH;
     }
 
-    public String getValorH() {
+    public int getValorH() {
         return valorH;
     }
 
-    public void setValorH(String valorH) {
+    public void setValorH(int valorH) {
         this.valorH = valorH;
-    }
-    
-    
-    
+    }   
 }

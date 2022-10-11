@@ -9,7 +9,7 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  habi:Habilidades[]=[];
+  habilidad:Habilidades[]=[];
   
   constructor(private sHabilidades:HabilidadesService,private tokenServices:TokenService) { }
   isLogged=false;
@@ -24,7 +24,7 @@ export class HabilidadesComponent implements OnInit {
   }
 
   cargarHabilidades():void{
-    this.sHabilidades.lista().subscribe(data=>{this.habi=data;})
+    this.sHabilidades.lista().subscribe(data=>{this.habilidad=data;})
     }
 
 

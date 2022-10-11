@@ -25,4 +25,16 @@ export class EditHabilidadesComponent implements OnInit {
     )
   }
 
+  onUpdate(): void {
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.sHabilidades.update(id, this.habili).subscribe(
+      data=> {
+        this.router.navigate(['']);
+      },err =>{
+        alert("Error al modificar Habilidad");
+        this.router.navigate(['']);
+      }
+    )
+  }
+
 }
