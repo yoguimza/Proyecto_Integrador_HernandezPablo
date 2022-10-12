@@ -1,7 +1,13 @@
 <!-- <p>acerca-de works!</p> -->
 <div class="row">
+    <div class="col-lg-2">
+        <button aria-label="Edita" type="button" class="btn btn-primary" routerLink="/editacercade/1" *ngIf="isLogged">
+            Editar Persona
+        </button>
+    </div>
     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <img alt="" src="../../../assets/perfil.JPG" class="img-fluid" id="fotodeperfil">
+        <img alt="" src={{persona.img}} class="img-fluid" id="fotodeperfil">
+        <!--<img alt="" src="../../../assets/perfil.JPG" class="img-fluid" id="fotodeperfil">-->
     </div>
     <div class="text-center col-xs-12 col-sm-2 col-md-2 col-lg-2">
         <!--<p id="nombre"> Pablo Alberto Hernandez Pardini</p>-->
@@ -13,7 +19,8 @@
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
         <span>
                     <h1>Acerca de Mi</h1>
-        <p>Técnico en Universitario en Redes y Telecomunicaciones, CCNA (Cisco Certified Networking Associate), Técnico Electrónico con orientación en Telecomunicaciones, Service Desk y Network Administrator en equipos Cisco, Mikrotik, Aruba, Fortinet y Ubiquiti </p>
+                    <p>{{persona.descripcion}} </p>        
+        <!--<p>Técnico en Universitario en Redes y Telecomunicaciones, CCNA (Cisco Certified Networking Associate), Técnico Electrónico con orientación en Telecomunicaciones, Service Desk y Network Administrator en equipos Cisco, Mikrotik, Aruba, Fortinet y Ubiquiti </p>-->
         </span>
     </div>
 

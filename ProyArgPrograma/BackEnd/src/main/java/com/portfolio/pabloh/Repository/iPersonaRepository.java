@@ -5,6 +5,7 @@
 package com.portfolio.pabloh.Repository;
 
 import com.portfolio.pabloh.Entity.Persona;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author Notebook
  */
 @Repository
-public interface iPersonaRepository extends JpaRepository<Persona,Long>{
-    
+public interface iPersonaRepository extends JpaRepository<Persona,Integer>{
+    public Optional<Persona> findByNombre(String nombre);
+    public boolean existsByNombre(String nombre);
 }

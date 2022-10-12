@@ -5,9 +5,10 @@
 package com.portfolio.pabloh.Service;
 
 import com.portfolio.pabloh.Entity.Persona;
-import com.portfolio.pabloh.Interface.iPersonaService;
 import com.portfolio.pabloh.Repository.iPersonaRepository;
 import java.util.List;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,32 +17,34 @@ import org.springframework.stereotype.Service;
  * @author Notebook
  */
 @Service
-public class ImplPersonaService implements iPersonaService {
+@Transactional
+public class ImplPersonaService{
     @Autowired iPersonaRepository ipersonarepository;
-
-    
-    
-    @Override
-    public List<Persona> getPersona() {
-        List <Persona> persona = ipersonarepository.findAll();
-                return persona;
+    public List<Persona> list(){
+        return ipersonarepository.findAll();        
     }
-
-    @Override
-    public void savePersona(Persona persona) {
-        ipersonarepository.save(persona);
+    
+    public Optional <Persona>getOne(int id){
+        return ipersonarepository.findById(id);
     }
-
-    @Override
-    public void deletePersona(Long id) {
+    
+    public Optional <Persona>getByNombre(String nombre){
+        return ipersonarepository.findByNombre(nombre);
+    }
+    
+    public void save(Persona perso){
+        ipersonarepository.save(perso);
+    }
+    
+    public void delete(int id){
         ipersonarepository.deleteById(id);
     }
-
-    @Override
-    public Persona findPersona(Long id) {
-        Persona persona = ipersonarepository.findById(id).orElse(null);
-        return persona;
-        
+    
+    public boolean existById(int id){
+        return ipersonarepository.existsById(id);
     }
     
-}
+    public boolean existByNombre(String nombre){
+        return ipersonarepository.existsByNombre(nombre);
+    }
+ }
