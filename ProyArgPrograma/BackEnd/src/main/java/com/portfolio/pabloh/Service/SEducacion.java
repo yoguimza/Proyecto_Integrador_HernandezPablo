@@ -5,7 +5,6 @@
 package com.portfolio.pabloh.Service;
 
 import com.portfolio.pabloh.Entity.Educacion;
-import com.portfolio.pabloh.Entity.Experiencia;
 import com.portfolio.pabloh.Repository.REducacion;
 import java.util.List;
 import java.util.Optional;
